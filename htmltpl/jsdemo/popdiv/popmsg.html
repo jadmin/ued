@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Pop Message</title>
+<script type="text/javascript">
+//自动消失的消息显示框
+function MyMsgDiv()
+{
+   this.msgDiv = null;
+   this.msgStyle = "font-size:12px;left:expression(this.offsetParent.scrollLeft+20);color:#ffffff;LINE-HEIGHT:150%;POSITION:absolute;TOP:expression(this.offsetParent.scrollTop+10);BACKGROUND-COLOR:#7f1ef6;";
+   this.ffMsgStyle = "font-size:12px;left:20px;color:#ffffff;LINE-HEIGHT:150%;POSITION:absolute;top:10px;BACKGROUND-COLOR:#ff0000;";
+   this.createDiv = function()
+   {
+       this.msgDiv = document.createElement("div");
+       if(window.XMLHttpRequest)
+       {
+           this.msgDiv.style.cssText = this.ffMsgStyle;
+       }
+       else
+       {
+           this.msgDiv.style.cssText = this.msgStyle;
+       }
+       document.body.insertBefore(this.msgDiv, document.body.childNodes[0]);
+   }
+   
+   this.Show = function(msgstr)
+   {
+       this.msgDiv.innerHTML = "&nbsp;" + msgstr + "&nbsp;";
+   }
+   
+   this.createDiv();  //放置此处是为了防止以下的md值为null 
+   
+   var closetime;
+   var md = this.msgDiv;
+   this.Show = function(msg,showtime)
+   {
+       md.innerHTML ="&nbsp;"+msg+"&nbsp;";
+       md.style.visibility = "visible";
+       if(closetime)window.clearTimeout(closetime);
+       closetime=setTimeout(this.Hidden,showtime*1000);
+   }
+
+   this.Hidden = function()
+   {
+       md.innerHTML = "";
+       md.style.visibility = "hidden";
+   }
+}
+
+function test()
+{
+   var md = new MyMsgDiv();
+   md.Show("Hello, world!", 3);
+}
+</script>
+</head>
+<body>
+<button value="点击提交" onclick="test()"></button>
+</body>
+</html>

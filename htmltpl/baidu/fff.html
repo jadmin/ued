@@ -1,0 +1,42 @@
+<html><head>
+<title>百度--操作失败</title>
+<link type="text/css" href="http://static.tieba.baidu.com/tb/static-forum/style/blockinfo.css?v=1330401803" rel="stylesheet">
+</head>
+<body>
+<div class="blockinfo_content_main">	
+	<div class="content_panel">
+		<div class="content_logo"></div>
+		<table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tbody><tr>
+				<td id="panel_left"></td>
+				<td align="center" id="panel_main">
+					<p id="head_info">您被关进小黑屋啦:(</p>
+					<div id="main_info">
+						<table cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr>
+								<td id="main_left"><img src="http://static.tieba.baidu.com/tb/static-forum/style/images/main_left.jpg"></td>
+								<td id="main_center">您的网络地址在<em title="java">java</em>吧内被封禁，预估解封时间为2012-03-13 05时。</td>
+								<td id="main_right"><img src="http://static.tieba.baidu.com/tb/static-forum/style/images/main_right.jpg"></td>
+							</tr>
+						</tbody></table>
+					</div>
+					<p id="help_info">若有疑问请访问<a href="http://tieba.baidu.com/tousu/new/add?frstitle=java#4">贴吧投诉中心</a>获得帮助。</p>
+				</td>
+				<td id="panel_right"></td>
+			</tr>
+		</tbody></table>
+		<div class="content_copy">&copy; 2011 Baidu <a href="http://www.baidu.com/duty/index.html">免责声明</a></div>		
+	</div>
+</div>
+<script>
+var info = document.getElementById("main_center");
+if(info.getElementsByTagName("EM")[0] != undefined){
+	var forum_name = info.getElementsByTagName("EM")[0].innerHTML;
+	if(forum_name.length&gt;5){
+		info.getElementsByTagName("EM")[0].innerHTML = forum_name.slice(0,5) + '...';
+	}	
+}
+</script>
+
+</body>
+</html>

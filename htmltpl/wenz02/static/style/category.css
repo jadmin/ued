@@ -1,0 +1,144 @@
+/* http://www.sanwen8.cn/static/style/category.css */
+
+@charset "utf-8";
+
+body,ul,li,h1,h2,h3,p,form{margin:0;padding:0;}
+body{line-height:200%; background:#fbfbfb; color:#444; font-size:14px;}
+h1,h2,h3{ font-weight:normal; font-family:"微软雅黑", Arial, sans-serif;}
+ul,li{ list-style:none;}
+img{ border:none;}
+a{color:#444; text-decoration:none;}
+a:hover{color:red;}
+.headerwrap{ background:url(/static/images/top-bg.png) repeat-x; height:52px;}
+#content{ overflow:hidden; zoom:1; margin-top:20px;}
+#header,#content,#footer{margin-left:auto; margin-right:auto; width:960px;}
+#main{float:left; width:660px; background:#fff; border:1px solid #eee;}
+#sidebar{float:right; width:280px; }
+
+.logo{float:left;}
+.menu{float:right; line-height:52px; width:650px; position:relative;}
+.menu a{margin:0 10px 0 15px; font-size:16px; font-family:"微软雅黑", Arial, sans-serif;}
+
+.search{height:30px; width:240px;}
+.search .skwrap{border:1px solid #eee; background:#fff; padding-right:5px;}
+.search .skeywords{ border:1px solid #fff; padding:3px 5px; width:200px;}
+.search .sbtn{ text-indent:-10000px; background:url(/static/images/sbtn.png) no-repeat; border:none;width:20px; height:20px;}
+.hotsearch{ font-size:12px;}
+.hotsearch,.hotsearch a{ color:#666;}
+
+.channel{padding:15px 20px 5px; border-bottom:1px solid #eee;}
+.channel h1{margin:0 0 15px; font-size:1.5em; color:#999;}
+.channel a{color:#F16E50;}
+.childs{}
+.childs a{margin:0 10px 15px 0; line-height:18px; width:53px; text-align:center; font-size:12px; padding:1px 5px; white-space:nowrap; display:inline-block; border-radius: 3px; background:#F16E50; color:#fff;}
+.childs a:hover{background:green;}
+
+.alist{margin:5px 20px 10px;}
+.alist li{padding:10px 0; border-bottom:1px solid #e9e9e9;}
+.alist h3{position:relative;}
+.alist h3 a{color:#333;}
+.alist .desc{font-size:12px; color:#666;}
+.alist .info{color:#999; font-size:12px;}
+.alist h3 em{position: absolute;width: 30px; height:24px;color: #fff;top: 2px;right: 1px;}
+.alist h3 em a { font-style:normal; text-align: center;width: 30px;height: 20px;display: block;position: absolute;background: #F16E50;font-size: 14px;line-height: 20px;color: #fff;margin: 0;padding: 0;z-index: 2;}
+.alist h3 em .corner {display: block;position: absolute;left: 12px;bottom: 0;height: 0;width: 0;font-size: 0;line-height: 0;border-width: 4px 4px;border-style: solid;border-color: #F16E50 #fff #fff #F16E50;z-index: 1;}
+.alist li.page{ border-bottom:none; text-align:right; padding:20px 0; font-size:14px;}
+.alist li.page a{padding:5px 10px;border:1px solid #eee;margin:0 5px;color:#454545;}
+.alist li.page a:hover{background:#F16E50; color:#fff; border:1px solid #F16E50;}
+.alist li.page .current{ background:#F16E50; padding:6px 13px; color:#fff;}
+
+.mod{margin-bottom:15px; border:1px solid #eee; background:#fff;}
+.mod h2{padding:5px 15px; font-size:16px; color:#F16E50;}
+.mod ul{margin:0 15px 10px;}
+.mod ul li{ line-height:120%; padding:8px 0; border-bottom:1px solid #f5f5f5;}
+.mod ul li{font-size:12px;}
+
+.footerwrap{margin-top:20px; background:#f0f0f0; border-top:1px solid #ddd; width:100%; padding:10px 0;}
+#footer{ text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:20px;}
+#footer .links{color:#b5b5b5;}
+#footer .links a{margin:0 5px;}
+
+#article,#authorarticle,#comments{margin:10px 20px;}
+#article .path{font-size:12px; color:#999;}
+#article .path a{color:#999;}
+#article .path em{float:right;}
+#article h1{font-size:28px; color:#F16E50; padding:20px; text-align:center;}
+#article .content{margin:10px 5px; font-size:14px;}
+#article .content p {text-indent: 2em;margin: 0 0 1em;}
+
+#authorarticle h2{ background:#f5f5f5; padding:0 10px; font-size:16px;}
+#authorarticle ul{border:1px solid #f5f5f5; overflow:hidden; zoom:1;}
+#authorarticle ul li{width:290px; padding:3px 0 0 10px; float:left; font-size:12px;}
+
+#comments h2{margin:0 0 15px; font-size:16px;}
+#comments li{margin:0 0 20px; padding:10px 0 5px; border-bottom:1px dashed #eee; overflow:hidden; zoom:1;}
+#comments .cu{float:left; width:48px;}
+#comments .cu img{width:40px; height:40px;}
+#comments .ci{float:left;width:570px; font-size:12px;}
+#comments .ci a{color:#336699;}
+#comments .cc{line-height:20px;}
+#comments .cd{ color:#999; margin-top:3px;}
+#comments .cd a{float:right;}
+#comments li.newcomment{border-top:1px solid #ccc; border-bottom:1px solid #ccc; background:#f9f9f9;}
+.cmessage{width:606px; padding:5px; height:60px; border:1px solid #ddd; overflow:auto;}
+.cbtn{ padding:5px 15px; background:#F16E50; border:none; color:#fff;}
+
+.author{padding:20px 10px; overflow:hidden; zoom:1;}
+.authoravatar{ text-align:center;}
+.mod ul.authorinfo{margin:0;padding:0; margin-left:10px; overflow:hidden;zoom:1;}
+.mod ul.authorinfo li {float:left; margin-right:10px; line-height:25px;}
+.author h3{line-height:18px; margin-bottom:8px; width:135px; overflow:hidden;}
+.author h3 a{font-size:18px; }
+.signature{margin:15px 10px 0; font-size:12px; background:#f5f5f5; padding:8px 10px; -moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius:5px; color:#666;}
+a.dobtn{border:1px solid #F16E50; border-radius:3px; background:#F16E50; color:#fff; padding:0 10px; font-size:12px; line-height:25px; display:inline-block;}
+
+.likeitem {margin: 20px 0;text-align: center;}
+.likeitem em.likenum {background: #F16E50;color: white; text-align:center;padding: 8px 20px; font-style: normal;}
+.likeitem em.dolike {padding: 8px 20px 8px 45px;font-style: normal;background: url(/static/images/like.png) no-repeat 12px 8px #F16E50;color: white;margin: 0 3px;}
+
+.mod .search{right:20px;}
+
+.menu ul{ margin:10px 0 0; line-height:36px; display:inline-block; width:100%;}
+.menu ul li{padding:0 10px; position:relative;}
+.channels{width:350px; float:left;}
+.nologin,.loginuser{float:right;}
+.loginuser em {margin: 6px 0 0 3px;border-style: solid dashed dashed;border-color: transparent;border-top-color: #999;font-size: 0;width: 0;height: 0;line-height: 0;border-width: 3px 3px 0;}
+.loginuser u {position: relative;z-index: 105; text-decoration: none; font-size:16px;}
+.loginuser i {position: absolute;display: block;height: 35px;width: 100%;top: 0;left: 0;}
+.subnav{z-index:1000;line-height:30px; background:#fff; padding:5px 10px; width:100px; font-size:12px; position:absolute;top:36px; left:0; border-right:1px solid #eee; border-bottom:1px solid #eee; display:none;}
+.navhover{ background:#fff;}
+
+
+
+
+.headline{padding:15px 10px 10px; overflow:hidden; zoom:1; border:1px solid #eee; background:#fff; margin-bottom:15px;}
+.hdpic{float:left; width:200px;}
+.hdtext{float:right; width:420px; margin-left:18px;}
+.hdtext em{ display:block; line-height:15px; font-size:11px; color:#999;}
+
+.elitemembers{overflow:hidden; zoom:1; padding:5px 8px; border:1px solid #eee; background:#fff;}
+.elitemembers ul{margin:10px 0; overflow:hidden;}
+.elitemembers h2 em{float:right; font-size:12px; font-style:normal;}
+.elitemembers li{float:left; width:60px; height:60px; margin:2px;}
+
+.register{background:#FFF6EE; border:1px solid #f8e9db;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px; padding:10px;}
+.joinin{border:1px solid #F16E50; background:#F16E50; color:#fff; padding:1px 15px 3px;}
+a.joinin:hover{ border:1px solid #eee; background:#fff; color:#F16E50;}
+img.useravatar{width:60px; height:60px; float:left; margin-right:15px;}
+
+.carea{padding:10px; border:1px solid #eee; background:#fff; margin-bottom:15px;}
+.cpic{ overflow:hidden; margin:10px 0; width:640px; }
+.ccpic{height:150px; overflow:hidden; position:relative;}
+.ccpic a{filter:alpha(opacity = 70);opacity:0.7;}
+.ccpic a:hover{opacity:1;}
+.ccpic p{ position:absolute; top:122px; padding:0 5px; width:300px; background:#000; color:#fff;filter:alpha(opacity = 50);opacity:0.5; display:block;}
+.ccpic a:hover p{opacity:0.8;}
+.cpic-l{float:left; width:320px;}
+.cpic-r{float:right; width:320px;}
+.carea-list{overflow:hidden; zoom:1;}
+.carea-list li{float:left; width:50%; height:30px; line-height:30px; display:inline-block; overflow:hidden;}
+
+#friendlinks{width:960px; margin:15px auto; background:#fff; border:1px solid #eee;}
+#friendlinks h2{ line-height:30px; padding:5px 10px; background:#f5f5f5;}
+#friendlinks .links{margin:5px 10px; line-height:24px;}
+#friendlinks a{margin-right:10px; white-space:nowrap; display:inline-block;}

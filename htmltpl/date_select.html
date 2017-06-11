@@ -1,0 +1,85 @@
+﻿<html>
+<head>
+<title>年月日三下拉框联动</title>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+var monthhead = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+$(document).ready(function() {
+	//先给年下拉框赋内容
+	var y = new Date().getFullYear();
+	
+	//以今年为准，前30年，后30年
+	var str = '';
+	for (var i = (y - 30); i < (y + 30); i++) {
+		str = '<option value="' + i + '">' + i + '年' + '</option>';
+		$('#year').append(str);
+	}
+	
+	//赋月份的下拉框
+	for (var i = 1; i < 13; i++) {
+		str = '<option value="' + i + '">' + (i < 10 ? ('0' + i) : i) + '月' + '</option>';
+		$('#month').append(str);
+	}
+	$('#year').val(y); //年份赋值
+	$('#month').val(new Date().getMonth() + 1); // 月份赋值
+	var n = monthhead[new Date().getMonth()];
+	if (new Date().getMonth() == 1 && IsPinYear($('#year').val())) n++;
+	writeDay(n);
+	
+	//赋日期下拉框
+	$('#day').val(new Date().getDate());
+
+	// 年份选择事件
+	$('#year').change(function() {
+		var year = $('#year').val();
+		if(year == '') {
+			$('#month').val('');
+			$('#day').val('');
+			return;
+		}
+		var monthvalue = $('#month').val();
+		if (monthvalue == ''){$('#day').val(''); return;}
+		var n = monthhead[monthvalue - 1];
+		if (monthvalue == 2 && IsPinYear(year)) n++;
+		writeDay(n);
+	});
+	
+	// 月份选择事件
+	$('#month').change(function() {
+		var month = $('#month').val();
+		var yearvalue = $('#year').val();
+		if (month == ''){$('#day').val(''); return;}
+		var n = monthhead[month - 1];
+		if (month == 2 && IsPinYear(yearvalue)) n++;
+		writeDay(n);
+	});
+});
+//据条件写日期的下拉框
+function writeDay(n) {
+	var s = '';
+	for (var i = 1; i< (n+1); i++) {
+		s = '<option value="' + i + '">' + (i < 10 ? ('0' + i) : i) + '日' + '</option>';
+		$('#day').append(s);
+	}
+}
+//判断是否闰平年
+function IsPinYear(year) { 
+	return(0 == year%4 && (year%100 !=0 || year%400 == 0))
+}
+</script>
+</head>
+<body>
+<form name="form1">
+    <select id="year" name="year" onchange="onYear(this.value)">
+	    <option value="">请选择年</option>
+    </select> 
+    <select id="month" name="month" onchange="onMonth(this.value)">
+        <option value="">请选择月</option>
+    </select> 
+    <select id="day" name="day">
+        <option value="">请选择日</option>
+    </select>
+</form>
+</body>
+</html>

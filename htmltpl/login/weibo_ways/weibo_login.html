@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>开放登录入口</title>
+<link href="css/pw_core.css" rel="stylesheet">
+<!-- 
+<link href="css/wind_purple.css" type="text/css" rel="stylesheet">
+ -->
+<link href="css/weibologin.css" rel="stylesheet">
+<script src="js/core.js" type="text/javascript"></script>
+<script src="js/pw_ajax.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div id="pw_box" class="" style="position: absolute; left: 1122px; z-index: 1011; visibility: visible; top: 39px; display: none;">
+    <ul style="width:118px;" class="menuList">
+		<li><a onclick="window.open('http://bbs.php100.com/login.php?action=weibologin&amp;type=qzone&amp;from='+self.location.href, 'weiboLogin', 'height=520, width=850, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no');" href="javascript:;" title="使用QQ帐号登录"><img src="images/qq_n.png">QQ帐号登录</a></li>
+		<li><a onclick="window.open('http://bbs.php100.com/login.php?action=weibologin&amp;type=taobao&amp;from='+self.location.href, 'weiboLogin', 'height=520, width=850, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no');" href="javascript:;" title="使用淘宝帐号登录"><img src="images/taobao_n.png">淘宝帐号登录</a></li>
+		<li><a onclick="window.open('http://bbs.php100.com/login.php?action=weibologin&amp;type=alipay&amp;from='+self.location.href, 'weiboLogin', 'height=520, width=850, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no');" href="javascript:;" title="使用支付宝登录"><img src="images/alipay_n.png">支付宝登录</a></li>
+    </ul>
+</div>
+
+
+<div class="loginWays">
+    <span class="firstWay cp" id="weibo_login">
+        <a onclick="window.open('http://bbs.php100.com/login.php?action=weibologin&amp;type=sinaweibo&amp;from='+self.location.href, 'weiboLogin', 'height=520, width=850, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no');" href="javascript:;"><img alt="使用微博帐号登录" src="images/sina_n.png">微博帐号登录</a>
+        <span class="icon-down"></span>
+    </span>
+    <div style="display: none;" class="pw_menu" id="menu_weibo_login">
+        <ul style="width:118px;" class="menuList">
+            <li><a onclick="window.open('http://bbs.php100.com/login.php?action=weibologin&amp;type=qzone&amp;from='+self.location.href, 'weiboLogin', 'height=520, width=850, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no');" href="javascript:;" title="使用QQ帐号登录"><img src="images/qq_n.png">QQ帐号登录</a></li>
+            <li><a onclick="window.open('http://bbs.php100.com/login.php?action=weibologin&amp;type=taobao&amp;from='+self.location.href, 'weiboLogin', 'height=520, width=850, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no');" href="javascript:;" title="使用淘宝帐号登录"><img src="images/taobao_n.png">淘宝帐号登录</a></li>
+            <li><a onclick="window.open('http://bbs.php100.com/login.php?action=weibologin&amp;type=alipay&amp;from='+self.location.href, 'weiboLogin', 'height=520, width=850, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no');" href="javascript:;" title="使用支付宝登录"><img src="images/alipay_n.png">支付宝登录</a></li>
+        </ul>
+    </div>
+</div>
+
+<script src="js/global.js" type="text/javascript"></script>
+<script>
+var openmenu = {'weibo_login' : 'menu_weibo_login'};
+var messagetip = null;
+window.onReady(function() {
+	read.InitMenu();
+});
+// WINDOW_LOADED=1;
+</script>
+
+</body>
+</html>

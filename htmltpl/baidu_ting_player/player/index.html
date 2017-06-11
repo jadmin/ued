@@ -1,0 +1,450 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>音乐播放器</title>
+<link href="skins/default/mbox.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="doc" class="mbl-doc">
+    <div class="mbl-hd">
+        <h2><a href="http://ting.baidu.com" target="_blank" id="mblogo" class="mblogo" >ting！社交音乐平台</a></h2>
+        <div id="userinfo" class="userinfo">
+
+            <div id="userinfo_hd" class="hd clearfix ">
+                <div id="logined" class="loginwraper clearfix">
+                    <em class="dpdown"></em>
+                    <a class="usercon" href="javascript:void(0);"  onclick="return false;"><img id="login_pic" src="images/avatar_default_mini.png" /><span id="user_nm"></span></a>
+                </div>
+                <div id="activewraper" class="activewraper" >
+                    <span id="login-uname" class="login-uname"></span>
+                    <a href="javascript:void(0);" onclick="return false;" id="login-hook">激活ting!</a>&nbsp;&nbsp;
+
+                    <a href="javascript:void(0);" onclick="return false;" id="logout">退出</a>
+                </div>
+                <div id="unloginwraper" class="unloginwraper">
+                    <a id="login" href="javascript:void(0);" onclick="return false;">登录</a>&nbsp;&nbsp;<a id="register" href="/register" target="_blank">注册</a>
+                </div>
+                <div  id="user_menu" class="user-menu">
+                        <div class="menu-top"></div>
+
+                        <ul>
+                            <li><a id="mytinghp" href="?" target="_blank"><span>我的ting</span></a></li>
+                            <li><a id="mytingfavor" href="?" target="_blank"><span>我的收藏</span></a></li>
+                            <li><a id="mydiy" href="?" target="_blank"><span>我的自选辑</span></a></li>
+                            <li><a id="logout-hook" href="javascript:mbox.user.logout();" ><span>退&nbsp;&nbsp;&nbsp;&nbsp;出</span></a></li>
+                        </ul>
+
+                        <div class="menu-bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div  class="mbl-bd">
+        <div class="mboxmian">
+           <div class="wrap">
+                <div class="mb-hd mb-controller  controller">
+
+                    <div class="hd ctrl">
+                        <div class="mb-playbtn ctrlbtn">
+                            <ul class="hd">
+                                <li class="prev"><a href="javascript:void(0);"  onclick="return false;" hidefocus="true">上一首</a></li>
+                                <li class="play"><a class="on" href="javascript:void(0);"  onclick="return false;" hidefocus="true">播放</a></li>
+                                <li class="next"><a href="javascript:void(0);"  onclick="return false;" hidefocus="true">下一首</a></li>
+                            </ul>
+
+                        </div>
+                        <div class="mb-playbtn clearfix">
+                            <div class="hd mute">
+                                <div class="mutebtn"><a href="javascript:void(0);"  onclick="return false;" hidefocus="true"></a></div>
+                            </div>
+                            <div class="bd">
+                            <!-- Slider Volume start -->
+                                <div class="volume-slider-main volslder" >
+                                    <div class="slider-side volume-slider-left"></div>
+
+                                    <div class="volumeId volume-slider-center">
+                                        <div class="tangram-slider slider-volume">
+                                            <div style="position:absolute;" class="tangram-slider-progressbar slider-volume-progressbar">
+                                                <div class="tangram-progressbar slider-volume-followProgressbar">
+                                                    <div class="tangram-progressbar-bar"></div>
+                                                </div>
+                                            </div>
+                                            <div class="tangram-slider-thumb slider-volume-thumb"></div>
+                                        </div>
+
+                                    </div>
+                                    <div class="slider-side volume-slider-right"></div>
+                                </div>
+                            <!-- Slider Volume End -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bd progress">
+                        <div class="mb-tit tit">
+
+                            <h2 class="titwarper hd" style="width:310px;overflow:hidden;">
+                                <div class="titwarperall" style="width:30000px;">
+                                    <em class="titcon">
+                                        <span class="stit"></span>-<span class="singer" ></span>
+                                    </em>
+                                </div>
+                            </h2>
+                            <div class="bd favor" ><a  href="javascript:void(0);"  onclick="return false;"  title="收藏" hidefocus="true"></a></div>
+
+                            <div class="ft recomm" style="display:none" ><a  href="javascript:void(0);"  onclick="return false;" title="推荐" hidefocus="true"></a></div>
+                        </div>
+                        <div class="mb-playslider playprog">
+                            <div class="hd music-slider-main">
+                                <div class="slider-side music-slider-left"></div>
+                                <div class="playslider music-slider-center">
+                                    <!-- slider-start -->
+                                    <div class="tangram-slider slider-music">
+                                        <div style="position:absolute;" class="tangram-slider-loaderProgressbarMain slider-music-loaderProgressbarMain">
+
+                                            <div class="tangram-progressbar slider-music-loaderProgressbar">
+                                                <div class="tangram-progressbar-bar"><span></span></div>
+                                            </div>
+                                        </div>
+                                        <div style="position:absolute;" class="tangram-slider-progressbar slider-music-progressbar">
+                                            <div class="tangram-progressbar slider-music-followProgressbar">
+                                                <div class="tangram-progressbar-bar"></div>
+                                            </div>
+                                        </div>
+
+                                        <div style="position:absolute;" class="tangram-slider-thumb slider-music-thumb"><img class="loadingimg" src="skins/default/loading.gif" style="margin:6px 2px 8px 6px;display:none;" /></div>
+                                    </div>
+                                    <!-- slider-end -->
+                                </div>
+                                <div class="slider-side music-slider-right"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ft playmod">
+
+                        <div class="mb-modbtn">
+                            <ul class="hd mod">
+                                <li class="random"><a title="随机播放" href="javascript:void(0);"  onclick="return false;" hidefocus="true">随机播放</a></li>
+                                <li class="sgelroll"><a title="单曲循环" href="javascript:void(0);"  onclick="return false;" hidefocus="true">单曲循环</a></li>
+                                <li class="listroll"><a title="列表循环" href="javascript:void(0);"  onclick="return false;" hidefocus="true">列表循环</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-time time">
+                            <div class="hd">
+                                <em class="currTime">00:00</em> / <span class="totlTime">00:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-bd">
+                    <div class="clearfix">
+                        <!-- songlist -->
+                        <div class="mb-songinfo songlist" style="position: relative;">
+                            <div class="con clearfix" style="display:block;">
+                              <div class="conwraper">
+                                  <div id="playListContainer" class="listbd" onselectstart="return false;">
+                                      <ul id="playlistfloat" class="mod">
+                                          <li class="delsingle"><a id="delbtn" title="删除歌曲" href="javascript:void(0);"  onclick="return false;" hidefocus="true">删除歌曲</a></li>
+
+                                          <li class="downloadsingle"><a id="downloadbtn" title="歌曲下载" href="javascript:void(0);"  onclick="return false;" hidefocus="true">歌曲下载</a></li>
+                                      </ul>
+                                  </div>
+                                  <div class="feedbackwraper">
+                                        <a href="http://tousu.baidu.com/ting/add" target="_blank" class="feedback">意见反馈</a>
+                                        <div class="list">
+                                            <div class="wrap nolist">
+                                                <ul class="clearfix">
+
+                                                </ul>
+                                                <div class="newlist">
+                                                     <a href="javascript:void(0);"  onclick="return false;" hidefocus="true">创建歌单</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span class="btnsave" >
+                                            <a href="javascript:void(0);"  onclick="return false;"  hidefocus="true" title="保存歌单"></a>
+
+                                        </span>
+                                  </div>
+                              </div>
+                              <!-- Lrc -->
+                            <div class="conlrc">
+                                    <div class="hd mb-album clearfix">
+                                        <div class="photo">
+                                            <div class="loadingbg imgwraper">
+                                                <a class="coverLink" href="#" target="_blank"><img width="90" height="90" class="cover" src="images/album_default_small.png"/></a>
+
+                                            </div>
+                                        </div>
+                                        <h4 class="albumName"><a class="albumLink" target="_blank" title=""></a></h4>
+                                        <div class="singername"><a class="singerLink" target="_blank" title=""></a></div>
+                                    </div>
+                                    <div class="division1"></div>
+                                    <div class="bd mb-lrcwraper clearfix"></div>
+                                    <div class="division2">
+                                        <div id="flashcontent"></div>
+
+                                    </div>
+                                    <div class="clipbtn_success" style="display:none;"></div>
+                                    <div class="clipbtn_nocontent"></div>
+                            </div>
+                            <div class="loading">加载中...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hidden" style="display:none;">
+    <div id="recoTip" class="mbpopup">
+        <div class="pophd wrapper">
+            <div class="outerleft"></div>
+            <div class="outerright"></div>
+
+            <div class="outercenter">
+                <div class="popcon">推荐</div>
+                <span class="popclose">关闭</span>
+            </div>
+        </div>
+        <div class="popbd wrapper">
+            <div class="outerleft"></div>
+            <div class="outerright"></div>
+
+            <div class="outercenter">
+               <div class="popcon">
+                <div class="recomform">
+                    <form>
+                        <h3>推荐歌曲："<span id="recom_tit">荷塘月色</span>"</h3>
+                        <div class="textwraper">
+                            <textarea id="recom_com" >在此填写推荐语</textarea>
+
+                        </div>
+                        <div class="clearfix">
+                            <a href="javascript:void(0);"  onclick="return false;" class="recobtn submitbtn">推荐</a>
+                            <span class="textlimit"><em class="typed">0</em>/<em class="maxtype">50</em></span>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="recomok" style="display:none;"><span>推荐成功。</span></div>
+                <div class="recomlimit" style="display:none;"><span>最多推荐5000次。</span></div>
+               </div>
+            </div>
+        </div>
+        <div class="popft wrapper">
+            <div class="outerleft"></div>
+            <div class="outerright"></div>
+
+            <div class="outercenter">
+                <div class="popcon"></div>
+            </div>
+        </div>
+    </div>
+   <div id="listenbreak" class="mbpopup">
+        <div class="pophd wrapper">
+                <div class="outerleft"></div>
+                <div class="outerright"></div>
+
+                <div class="outercenter">
+                    <div class="popcon"></div>
+                    <span class="popclose" >关闭</span>
+                </div>
+        </div>
+        <div class="popbd wrapper">
+            <div class="outerleft"></div>
+            <div class="outerright"></div>
+
+            <div class="outercenter">
+                <div class="continue">
+                  <div class="bgcontinue">
+                   <form>
+                       <h4 id="break_tip1" style="display:none;">揉揉耳朵歇一歇，继续音乐之旅~</h4>
+                       <h4 id="break_tip2" style="display:none;">换换歌曲听一听，可能会有不一样的心情哦~</h4>
+                       <div class="clearfix">
+                            <a href="javascript:void(0);" id="continueconfirm"  onclick="return false;">继续</a>
+
+                       </div>
+                   </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="popft wrapper">
+            <div class="outerleft"></div>
+            <div class="outerright"></div>
+
+            <div class="outercenter">
+                <div class="popcon"></div>
+            </div>
+        </div>
+    </div>
+       <div id="playfailure" class="mbpopup">
+        <div class="pophd wrapper">
+                <div class="outerleft"></div>
+                <div class="outerright"></div>
+
+                <div class="outercenter">
+                    <div class="popcon"></div>
+                    <span class="popclose" >关闭</span>
+                </div>
+        </div>
+        <div class="popbd wrapper">
+            <div class="outerleft"></div>
+            <div class="outerright"></div>
+
+            <div class="outercenter">
+                <div class="failure">
+                  <div class="bg">
+                   <form>
+                       <h4><strong>糟糕了</strong><br/>您本地的WMP播放支持出现了问题。<br/><a href="/help/music.html?#wmpException_hook" target="_blank">我该怎么办</a></br></h4>
+                   </form>
+                  </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="popft wrapper">
+            <div class="outerleft"></div>
+            <div class="outerright"></div>
+            <div class="outercenter">
+                <div class="popcon"></div>
+            </div>
+
+        </div>
+    </div>
+    <div id="flashfailure" class="mbpopup">
+        <div class="pophd wrapper">
+                <div class="outerleft"></div>
+                <div class="outerright"></div>
+                <div class="outercenter">
+                    <div class="popcon"></div>
+                    <span class="popclose" >关闭</span>
+
+                </div>
+        </div>
+        <div class="popbd wrapper">
+            <div class="outerleft"></div>
+            <div class="outerright"></div>
+            <div class="outercenter">
+                <div class="failure">
+                  <div class="bg">
+                   <form>
+
+                       <h4><strong>糟糕了</strong><br/>Flash播放器未安装或者版本过低。<br/><a href="/help/music.html?#fmpException_hook" target="_blank">我该怎么办</a></br></h4>
+                   </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="popft wrapper">
+
+            <div class="outerleft"></div>
+            <div class="outerright"></div>
+            <div class="outercenter">
+                <div class="popcon"></div>
+            </div>
+        </div>
+    </div>
+    <div id="abroad" class="mbpopup">
+        <div class="pophd wrapper">
+
+                <div class="outerleft"></div>
+                <div class="outerright"></div>
+                <div class="outercenter">
+                    <div class="popcon"></div>
+                </div>
+        </div>
+        <div class="popbd wrapper">
+            <div class="outerleft"></div>
+            <div class="outerright"></div>
+
+            <div class="outercenter">
+                <div class="abroad"></div>
+            </div>
+        </div>
+        <div class="popft wrapper">
+            <div class="outerleft"></div>
+            <div class="outerright"></div>
+            <div class="outercenter">
+                <div class="popcon"></div>
+
+            </div>
+        </div>
+    </div>
+    <div id="songlistpop" class="mbpopup songlistpop">
+        <div class="pophd wrapper">
+                <div class="outerleft"></div>
+                <div class="outerright"></div>
+                <div class="outercenter">
+                    <div class="popcon"><span class="tit">创建歌单</span></div>
+
+                    <span class="popclose" >关闭</span>
+                </div>
+        </div>
+        <div class="popbd wrapper">
+            <div class="outerleft"></div>
+            <div class="outerright"></div>
+            <div class="outercenter">
+                <div class="remain songlistcon clearfix">
+
+                    <div class="con">
+                            <div class="songlisthd"><span class="name nm">给歌单换个名字吧~（例如：快乐的，好听的）</span><span class="note"></span></div>
+                            <div class="songlistbd clearfix"><input class="songlistname" type="text" /></div>
+                            <div class="songlistft clearfix">
+                                <a href="javascript:void(0);" class="save"  onclick="return false;">保存</a>
+                                <a href="javascript:void(0);" class="cancel"  onclick="return false;">取消</a>
+                            </div>
+
+                    </div>
+                    <div class="create">
+                        <div class="note"><span>歌单创建成功，可点击歌单名查看</span></div>
+                        <div class="name"></div>
+                    </div>
+                    <div class="add">
+                        <div class="note"><span>已成功保存，可点击歌单名查看</span></div>
+                        <div class="name"></div>
+
+                    </div>
+                    <div class="only">
+                        <div class="name"></div>
+                        <div class="songlistft btns clearfix">
+                            <a href="javascript:void(0);" class="save disable"  onclick="return false;">保存</a>
+                            <a href="javascript:void(0);" class="cancel"  onclick="return false;">取消</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="popft wrapper">
+            <div class="outerleft"></div>
+            <div class="outerright"></div>
+            <div class="outercenter">
+                <div class="popcon"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/ting.passport.js"></script>
+<script type="text/javascript" src="js/singleInstance.js"></script>
+<script type="text/javascript" src="js/conf.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/playCore.js"></script>
+
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/ui.js"></script>
+<script type="text/javascript" src="js/logic.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
+
+<!-- 单实例 start -->
+<iframe src="" name="bridge" style="display:none;" ></iframe>
+<div id="flashesContainer" style="width: 1pt; height: 1pt; position: absolute; z-index: 1; top: -100px;"></div>
+</body>
+</html>

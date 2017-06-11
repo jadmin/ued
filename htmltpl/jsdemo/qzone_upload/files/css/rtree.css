@@ -1,0 +1,39 @@
+#main{
+	
+	width:250px;
+	height:400px;
+	float:left;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+#tDiv0{
+width:250px;
+	height:400px;
+	position:absolute;
+	overflow:scroll;
+	white-space:nowrap;
+	border:1px solid #999999;
+
+}
+.croImg{
+	cursor:pointer;
+}
+a:link{
+text-decoration:none
+}
+a:hover{
+text-decoration:none
+}
+a:visited{
+text-decoration:none
+}
+img{
+	border:0px;
+	vertical-align:middle;
+}
+div{
+	font-size:12px;
+}
+
+

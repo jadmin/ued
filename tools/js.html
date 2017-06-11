@@ -1,0 +1,115 @@
+﻿<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="在线js压缩工具" name="keywords">
+<meta content="在线js压缩工具" name="description">
+<title>在线js压缩工具 - 在线工具</title>
+<link type="text/css" rel="stylesheet" href="css/jsmin.css">
+<style type="text/css">
+#comment { width:95%; height:4em; }
+#input { width:95%; height:10em; }
+#go { font-weight:bold; }
+#outputtitle, #statstitle, #stats { display:none; }
+#oldsize, #newsize, #ratio { text-align:right; width:4em; }
+#output { width:95%; height:10em;display:none; }
+h2 { margin-bottom:0; }
+</style>
+<script src="js/jsmin.js" type="text/javascript"></script>
+<script type="text/javascript">
+function $(i) {
+	return document.getElementById(i);
+}
+function go() {
+	$('output').value = jsmin($('comment').value, $('input').value, $('level').value);
+	$('outputtitle').style.display = $('output').style.display = $('statstitle').style.display = $('stats').style.display = 'block';
+	$('oldsize').value = jsmin.oldSize;
+	$('newsize').value = jsmin.newSize;
+	$('ratio').value = (Math.round(jsmin.newSize / jsmin.oldSize * 1000) / 10) + '%';
+}
+function bw() {
+	$('comment').value = $('input').value = $('output').value = '';
+	$('outputtitle').style.display = $('output').style.display = $('statstitle').style.display = $('stats').style.display = 'none';
+}
+</script>
+</head>
+<body>
+<!-- 内容框 上 -->
+<div class="neirongkuang">
+	<div class="neirongkuang_zhongshang">
+		<div id="neirongkuang_zhongshang_zuo"><h3>在线js压缩工具</h3></div>
+	</div>
+</div>
+
+<!-- 内容框 中 -->
+<div class="neirongkuang">
+<div class="neirongkuang_quan">
+	
+	<h2>Comments</h2>
+	<textarea name="comment" id="comment"></textarea>
+	<h2>你想要压缩的代码，拷贝到下面的框中</h2>
+	<textarea name="input" id="input">// is.js
+
+// (c) 2001 Douglas Crockford
+// 2001 June 3
+
+
+// is
+
+// The -is- object is used to identify the browser.  Every browser edition
+// identifies itself, but there is no standard way of doing it, and some of
+// the identification is deceptive. This is because the authors of web
+// browsers are liars. For example, Microsoft's IE browsers claim to be
+// Mozilla 4. Netscape 6 claims to be version 5.
+
+var is = {
+    ie:      navigator.appName == 'Microsoft Internet Explorer',
+    java:    navigator.javaEnabled(),
+    ns:      navigator.appName == 'Netscape',
+    ua:      navigator.userAgent.toLowerCase(),
+    version: parseFloat(navigator.appVersion.substr(21)) ||
+             parseFloat(navigator.appVersion),
+    win:     navigator.platform == 'Win32'
+}
+is.mac = is.ua.indexOf('mac') &gt;= 0;
+if (is.ua.indexOf('opera') &gt;= 0) {
+    is.ie = is.ns = false;
+    is.opera = true;
+}
+if (is.ua.indexOf('gecko') &gt;= 0) {
+    is.ie = is.ns = false;
+    is.gecko = true;
+}
+</textarea>
+	<br><br>
+
+	<center>
+		Level:&nbsp;
+		<select id="level">
+			<option value="1">最小压缩</option>
+			<option selected="selected" value="2">普通压缩</option>
+			<option value="3">超级压缩</option>
+		</select>
+		&nbsp;&nbsp;
+		<input type="submit" onclick="go();return false;" value="压缩" id="go">
+		&nbsp;&nbsp;
+		<input type="submit" onclick="bw();return false;" value="清除"><br><br>
+		<small><b>Minimal</b>: original algorithm but keep linefeeds if single - <b>Conservative</b>: original algorithm - <b>Agressive</b>: remove more linefeed than the original algorithm but can be regressive</small>
+	</center>
+
+	<h2 id="outputtitle" style="display: block;">压缩后代码</h2>
+	<textarea name="output" id="output" style="display: block;"></textarea>
+	<h2 id="statstitle" style="display: block;">状态提示</h2>
+	<div id="stats" style="display: block;">原来大小: <input id="oldsize"> 压缩后大小: <input id="newsize"> 压缩率: <input id="ratio"></div>
+</div>
+</div>
+
+<!-- 内容框 下 -->
+<div class="neirongkuang">
+	<div class="neirongkuang_xia">
+		<div class="neirongkuang_xia_zuo"></div>
+		<div class="neirongkuang_xia_you"></div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>投票</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	document.domain = location.hostname.indexOf('pengyou.com') >= 0 ? 'pengyou.com' : 'qq.com';
+	var QZONE = QZONE||{};
+	QZONE.FP = parent.PENGYOU.FP;
+	var _img = parent.DOMAINS.IMGCACHE;
+	var isp = "";
+	_img.replace(/(\w+)\.qzonestyle\.gtimg\.cn/i,function(){	
+		isp = arguments[1]+'.';
+	});
+</script>
+<script type="text/javascript">
+	document.write([
+			'<script type="text/javascript" src="http://'+isp+'qzs.qq.com/ac/qzone/qzfl/qzfl_2.0.9.9.js"><\/script>',
+			'<script type="text/javascript" src="http://'+isp+'qzs.qq.com/qzone/app/controls/addVoteBox/addVoteBox_1.0.js"><\/script>',
+			'<script type="text/javascript" src="http://'+isp+'qzs.qq.com/qzone/app/controls/voteViewer/voteViewer_1.0.js"><\/script>'
+	].join(""));
+</script><script type="text/javascript" src="tweet_vote_js_data/qzfl_2.js"></script><script type="text/javascript" src="tweet_vote_js_data/addVoteBox_1.js"></script><script type="text/javascript" src="tweet_vote_js_data/voteViewer_1.js"></script>
+<script type="text/javascript">
+	if(document.domain=='pengyou.com'){
+		QZFL.config.domain = "qzs.pengyou.com";
+		QZFL.config.FSHelperPage =  "http://" + QZFL.config.domain + "/qzone/v5/toolpages/fp_gbk.html"
+	}
+	try{
+	    parent.onVoteControlReady();
+	}catch(e){}
+</script>
+
+</body></html>
+<!--[if !IE]>|xGv00|7e259c8049e319e7a844b6c552d5def8<![endif]-->

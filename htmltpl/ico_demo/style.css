@@ -1,0 +1,48 @@
+body{background:#fff;line-height:20px;font-size:12px;}
+body,input,select,button{font-family:verdana,sans-serif;}
+h1,h2,h3,h4,h5,h6,select,input,textarea,button{font-size:100%;}
+body,h1,h2,h3,h4,h5,h6,ul,ol,li,form,p,dl,dt,dd,table,th,td,img,blockquote{margin:0;padding:0;border:0;}
+hr{ margin:0; padding:0px}
+input,button,textarea,img{line-height:normal;}
+abbr,acronym,address,cite,q,em,code,var,dfn,ins{font-style:normal;text-decoration:none;border:0;}
+q:before,q:after{content:"";}
+ul,ol{list-style:none;}
+table{border-collapse:collapse;border-spacing:0;}
+select,input,label,button,button img{vertical-align:middle;}
+.ipt-c,.ipt-r{width:16px;height:16px;padding:0;margin:0 3px 0 0;overflow:hidden;}
+.page,.header,.content,.footer{margin:auto;}
+
+/* ========================================================================================
+   Reset End */
+   
+.clear{ clear:both; font-size:0px; line-height:0px; height:0px; overflow:hidden}
+body{ text-align:center}
+.page{ width:750px; margin:0 auto; text-align:left; padding:20px 0}
+.header{ height:60px; background-color:#EFF4F6}
+.header img{ float:left; margin-top:16px; margin-left:14px}
+	/* logoÍ·²¿±³¾°*/
+	.hd-163{}
+	.hd-126{ background-color:#e5f2ea}
+	.hd-yeah{ background-color:#f9eeef}
+	.hd-yeah img{ margin-top:13px}
+
+.content{ padding:50px 0}
+.content b{ display:block; width:100px; height:50px; float:left;background:url('images/ico.gif') no-repeat}
+.content b.ico-err{ background-position:6px -28px}
+.content b.ico-ok{ background-position:6px -121px}
+.content b.ico-refuse{ background-position:6px -308px}
+.content b.ico-confirm{ background-position:6px -215px}
+
+.content p{ font-size:14px; line-height:180%; color:#000; padding-left:100px}
+.content p input{ background-image:url('images/btn.png'); background-repeat:no-repeat; border:0px; cursor:pointer; font-size:12px; width:57px; height:26px; background-color:#FFF; outline:none; margin-right:15px}
+.content p .ipt-impt{ background-position:-2px -147px}
+.content p .ipt-impt-over{ background-position:-2px -195px}
+.content p .ipt-impt-active{ background-position:-2px -243px}
+.content p .ipt-nor{ background-position:-2px -1px}
+.content p .ipt-nor-over{ background-position:-2px -51px}
+.content p .ipt-nor-active{ background-position:-2px -99px}
+
+.footer{ height:40px; line-height:40px; text-align:center; border-top:#DCDCDC 1px solid; background-color:#F5F5F5; color:#838383}
+.footer a{color:#838383; text-decoration:none; margin-right:3px}
+.footer a:hover{ text-decoration:underline}
+

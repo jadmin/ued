@@ -1,0 +1,4 @@
+
+http://ting.baidu.com/data/music/songlink?songIds=13609162  => 
+
+{"errorCode":22000,"data":{"xcode":"d54fdc4ae48d41b2ac5cb01b8744315c","songList":[{"songId":"13609162","songName":"\u613f","artistId":"45561","artistName":"\u738b\u83f2","albumId":"13610327","albumName":"\u613f","songPicSmall":"http:\/\/a.hiphotos.baidu.com\/ting\/pic\/item\/0dd7912397dda144581d2effb2b7d0a20cf48663.jpg","lrcLink":"\/data2\/lrc\/13609609\/13609609.lrc","version":null,"time":"238","linkCode":22000,"songLink":"http:\/\/musicfile.baidu.com\/data2\/music\/13610315\/13610315.mp3","format":"mp3","rate":"128","size":"3812053"}]}}

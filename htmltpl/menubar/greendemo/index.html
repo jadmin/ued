@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>绿色动感二级水平菜单 </title>
+<link rel="stylesheet" type="text/css" href="global.css" media="screen" />
+<script> 
+//初始化
+var def="1";
+function mover(object){
+  //主菜单
+  var mm=document.getElementById("m_"+object);
+  mm.className="m_li_a";
+  //初始主菜单先隐藏效果
+  if(def!=0){
+    var mdef=document.getElementById("m_"+def);
+    mdef.className="m_li";
+  }
+  //子菜单
+  var ss=document.getElementById("s_"+object);
+  ss.style.display="block";
+  //初始子菜单先隐藏效果
+  if(def!=0){
+    var sdef=document.getElementById("s_"+def);
+    sdef.style.display="none";
+  }
+}
+ 
+function mout(object){
+  //主菜单
+  var mm=document.getElementById("m_"+object);
+  mm.className="m_li";
+  //初始主菜单还原效果
+  if(def!=0){
+    var mdef=document.getElementById("m_"+def);
+    mdef.className="m_li_a";
+  }
+  //子菜单
+  var ss=document.getElementById("s_"+object);
+  ss.style.display="none";
+  //初始子菜单还原效果
+  if(def!=0){
+    var sdef=document.getElementById("s_"+def);
+    sdef.style.display="block";
+  }
+}
+</script>
+
+</head>
+<body class="index">
+<!-- 导航 开始 -->
+<div class="header">
+  <div class="inner">
+    <map name="nav" id="nav">
+      <div class="nav"> 
+      <a id="m_1" class='m_li_a' href="#" onmouseover='mover(1);' onmouseout='mout(1);'><strong >首 页</strong></a> 
+      <a id="m_2" class='m_li' href="#" onmouseover='mover(2);' onmouseout='mout(2);'><strong>图片图标</strong></a> 
+      <a id="m_3" class='m_li' href="#" onmouseover='mover(3);' onmouseout='mout(3);'><strong>CSS模板</strong></a> 
+      <a id="m_4" class='m_li' href="#" onmouseover='mover(4);' onmouseout='mout(4);'><strong>后台模板</strong></a> 
+      <a  id="m_5" class='m_li' href="#" onmouseover='mover(5);' onmouseout='mout(5);'><strong>CSS代码</strong></a> 
+      <a  id="m_6" class='m_li' href="#" onmouseover='mover(6);' onmouseout='mout(6);'><strong>CSS菜单</strong></a> 
+      <a  id="m_7" class='m_li' href="#" onmouseover='mover(7);' onmouseout='mout(7);'><strong class="last">CSS图标</strong></a>
+      <a  id="m_8" class='m_li' href="#" onmouseover='mover(8);' onmouseout='mout(8);'><strong>后台模板</strong></a> 
+      <a  id="m_9" class='m_li' href="#" onmouseover='mover(9);' onmouseout='mout(9);'><strong>CSS代码</strong></a> 
+      <a  id="m_10" class='m_li' href="#" onmouseover='mover(10);' onmouseout='mout(10);'><strong>CSS菜单</strong></a> 
+      <a  id="m_11" class='m_li' href="#" onmouseover='mover(11);' onmouseout='mout(11);'><strong class="last">CSS图标</strong></a>
+      </div>
+    </map>
+  
+    <ul > 
+    <li id="s_1" style="padding-left:29px;"  class="sub_nav" ><a href="#" >ICO图标1</a>  <a href="#">GIF图片1</a>   <a href="#">PNG图标1</a> </li>
+    <li id="s_2" style="paddingleft:129px;"  class="sub_nav" ><a href="#" >ICO图标2</a>  <a href="#">GIF图片1</a> <a href="#">PNG图标1</a> </li> 
+    <li id="s_3" style="padding-left:229px;"  class="sub_nav" ><a href="#" >ICO图标3</a> <a href="#">GIF图片1</a>  <a href="#">PNG图标1</a> </li>
+    <li id="s_4"  style="padding-left:329px;" class="sub_nav" ><a href="#" >ICO图标4</a> <a href="#">GIF图片1</a>  <a href="#">PNG图标1</a> </li>
+    <li id="s_5" style="padding-left:439px;"  class="sub_nav" ><a href="#" >ICO图标5</a>  <a href="#">GIF图片1</a>   <a href="#">PNG图标1</a> </li>
+    <li id="s_6" style="paddingleft:529px;"  class="sub_nav" ><a href="#" >ICO图标6</a>  <a href="#">GIF图片1</a> <a href="#">PNG图标1</a> </li> 
+    <li id="s_7" style="padding-left:589px;"  class="sub_nav" ><a href="#" >ICO图标7</a> <a href="#">GIF图片1</a>  <a href="#">PNG图标1</a> </li>
+    <li id="s_8"  style="padding-left:629px;" class="sub_nav" ><a href="#" >ICO图标8</a> <a href="#">GIF图片1</a>  <a href="#">PNG图标1</a> </li>      
+    <li id="s_9" style="padding-left:699px;"  class="sub_nav" ><a href="#" >ICO图标9</a>  <a href="#">GIF图片1</a>   <a href="#">PNG图标1</a> </li>
+    <li id="s_10" style="paddingleft:699px;"  class="sub_nav" ><a href="#" >ICO图标10</a>  <a href="#">GIF图片1</a> <a href="#">PNG图标1</a> </li> 
+    <li id="s_11" style="padding-left:729px;"  class="sub_nav" ><a href="#" >ICO图标11</a> <a href="#">GIF图片1</a>  <a href="#">PNG图标1</a> </li>
+    </ul>
+  </div>
+</div>
+<!-- 导航 结束 -->
+</body>
+</html>

@@ -1,0 +1,109 @@
+/**
+ * 开源中国社区网站主样式(2011版)
+ * 文件名: oschina2011.css
+ * 作者: Winter Lau (javayou@gmail.com)
+ * 网址: http://www.oschina.net
+ */
+
+/* 全局 */
+ul,ol {list-style-type:none;}
+img {border:0;}
+body {
+	background:#f9f9f9;
+	text-align:center;
+	font-size:10pt;
+}
+
+#OSC_Screen {
+	width:998px;
+	margin:0px auto;
+	text-align:left;
+	padding:0 4px;
+	margin-bottom:50px;
+}
+#OSC_Page {}
+.CenterDiv {}
+
+/* 导航条 */
+#OSC_MainNav {
+	height:30px;
+	background:#40AA53;
+	clear:both;
+	padding:0 4px 0 10px;
+}
+#OSC_MainNav #MenuItems ul {
+	margin:5px 0 0 0;
+	padding: 0;
+	float:left;
+	height:24px;
+	line-height:22px;
+}
+#OSC_MainNav #MenuItems ul li.nav_item {
+	float:left;
+	font-weight:bold;
+	padding:0 10px;
+}
+#OSC_MainNav #MenuItems ul li.last {border-right:0;}
+#OSC_MainNav #MenuItems ul li.nav_item a {
+	font-size:10.5pt;
+	color:#DFD;
+	text-decoration:none;
+	outline:0;
+}
+#OSC_MainNav #MenuItems ul li.nav_item a:hover {color:#FFF;}
+#OSC_MainNav #MenuItems ul li.current {
+	background:#fff;
+	height:26px;
+	line-height:24px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+#OSC_MainNav #MenuItems ul li.current a {color:#060;}
+#OSC_MainNav #MenuItems ul li.current a:hover {color:#060;}
+
+#OSC_MainNav form {float:right;margin:3px 0 0 0;width:310px;}
+
+#OSC_MainNav form .ipt{ display:inline-block; height:22px; padding:2px 0 0 5px; background:#FFF;}
+#OSC_MainNav form .ipt input{color:#868686; width:200px; font:13px/22px Tahoma, Geneva, sans-serif ; border:none; background:#FFF; padding:0; height:20px;outline:0;}
+#OSC_MainNav form .bnt{color:#FFF; text-align:center; background:#258436; width:45px; height:24px; border:1px solid #258436; cursor:pointer; }
+
+#OSC_MainNav form .search-by{float:left;}
+#OSC_MainNav form .search_on{background:#FFF; text-align:center; position:relative;}
+#OSC_MainNav form .search_on .text{height:24px; line-height:23px;width:50px; display:block; color:#868686; cursor:pointer ; text-align:left; padding:0px 0 0 10px; background:url(../images/selectbox_bg.png) no-repeat}
+#OSC_MainNav form .search_on .text.on{background-position:0 -24px}
+#OSC_MainNav form .search_on .text.hover{background-position:0 -48px}
+#OSC_MainNav form .search_list{background:#FFF; display:none; padding: 0; margin: 0; position:absolute; width:80px; border:1px solid #c3c3c3; z-index:9999;}
+#OSC_MainNav form .search_list li{width:80px;height:24px; line-height:24px;}
+#OSC_MainNav form .search_list a{display:block; color:#333 !important; font-size:12px !important; text-decoration:none;padding:0 0 0 10px;}
+#OSC_MainNav form .search_list a:hover{background:#3399ff; color:#FFF !important}
+#OSC_MainNav form .f_r{float:right}
+#OSC_MainNav form .f_l{float:left}
+#OSC_MainNav form .last{margin:0 !important}
+#OSC_MainNav form .hide{display:none}
+
+#OSC_SubNav {
+	background:#fff;
+	border:1px solid #40AA53;
+	border-top:0;
+	padding:3px 0 4px 5px;
+}
+#OSC_SubNav a {
+	font-size:9pt;
+	margin-right:2px;
+	color:#060;
+	padding:0 2px;
+	text-decoration:none;
+}
+#OSC_SubNav a:hover {
+	color:#FFF;
+	background:#6C6;
+}
+#OSC_SubNav a.more {
+	color:#A00;
+}
+

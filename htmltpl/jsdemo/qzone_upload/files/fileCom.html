@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RTree</title>
+<link type="text/css" rel="stylesheet" href="css/rtree.css"/>
+<style>
+.treeTitle{
+	cursor:pointer;
+}
+.bgGray{
+	background-color:#3399FF;
+	color:#FFFFFF;
+}
+</style>
+<script type="text/javascript" src="js/rtree.js"></script>
+<script type="text/javascript" src="js/jquery-1.2.6.js"></script>
+
+<script>
+//注：每个嵌入页必须定义该方法，供父窗口调用，并且返回true或false来告之父窗口是否关闭
+function Ok(){
+ var checkbs = document.getElementsByName("checkb")
+	//相关逻辑代码
+	for(var i=0;i<checkbs.length;i++){
+		if(checkbs[i].checked){
+			alert(checkbs[i].value);//checkbs[i].value路径
+		}
+	}
+	return true;//返回true模态窗口关闭；返回false模态窗口不关闭；
+}
+
+</script>
+
+
+
+
+</head>
+<body>
+<table width="700" border="0">
+<tr>
+  <td width="210" height="400" >
+    <div id="main">
+    </div>
+  </td>
+  <td width="490">
+    <div id="" style="width:450px; position:absolute;left:250px;top:0px;height:400px;">
+	  <div style="width:450px; height:20px; border-bottom:1px solid #999999">
+		&nbsp;&nbsp;&nbsp;<input type="checkbox" name="all" onclick="checkAll(this)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;全选
+	  </div>
+	  <div id="content" style="width:450px;overflow:scroll;height:380px;"">
+	  </div>
+    </div>
+  </td>
+</tr>
+</table>
+
+
+<script>
+
+/**
+*全部选中文件操作
+*/
+function checkAll(e){
+  var checkbs = document.getElementsByName("checkb")
+
+  if(e.checked){ //如果选中
+    for(var i=0;i<checkbs.length;i++){
+      checkbs[i].checked=true;
+      var checkimg = checkbs[i].parentNode.previousSibling;
+      checkimg.innerHTML="<img style='' src='images/chose.gif'>";
+    }
+  }
+  else{
+    for(var i=0;i<checkbs.length;i++){
+    checkbs[i].checked=false;
+    var checkimg = checkbs[i].parentNode.previousSibling;
+    checkimg.innerHTML="";
+    }
+  }
+}
+
+function alterBg(){
+	$('.treeTitle').unbind('click').click(function(){
+		$('.bgGray').removeClass('bgGray');
+		$(this).addClass('bgGray');
+	});
+}
+//定义树
+var r=new rTree("r");
+r.setNodedbc(true);
+r.setNodehref(false);
+r.setLazy(false);
+r.canAlterbg(true);
+var fso = new ActiveXObject("Scripting.FileSystemObject");
+/**
+ * 获取所有的驱动盘
+ */
+function getDrivers(){
+   var  s, n, e, x,driver=[];                     // 声明变量。
+   e = new Enumerator(fso.Drives);          // 在驱动器上创建 Enumerator。
+   s = "";
+   for (;!e.atEnd();e.moveNext())           // 枚举驱动器集合。
+      {
+         x = e.item();
+         if (x.DriveType == 3){// 查看是否网络驱动。
+            n = x.ShareName; 
+            driver.push(x.VolumeName+" ("+x.DriveLetter+":)"); 
+         }              
+                         // 获取共享名。
+         else if (x.IsReady){ // 查看驱动器是否已就绪。
+           n = x.VolumeName;               // 获取卷名。
+           driver.push(x.VolumeName+" ("+x.DriveLetter+":)");
+         }               
+         else
+            n = "[驱动器未就绪]";
+      }
+     return driver;
+}
+
+/**
+ * 获取所有的文件列表
+ */
+function getFileList(forlder){
+  var f = fso.GetFolder(forlder);
+  var ff = new Enumerator(f.Files);
+  var files=[];
+   for (;!ff.atEnd();ff.moveNext()){
+     files.push(ff.item());
+   }
+   return files;
+}
+
+/**
+ * 获取目录列表
+ */
+function getForlderList(forlder){
+  var f = fso.GetFolder(forlder);
+  var ff = new Enumerator(f.SubFolders);
+  var forlder=[];
+   for (;!ff.atEnd();ff.moveNext()){
+     forlder.push(ff.item());
+   }
+   return forlder;
+}
+
+//获取驱动盘
+var drivers = getDrivers();
+var k=1; //动态Id，主要是为节点id服务
+for(var i=0;i<drivers.length;i++){	
+		k=k+1;//让id不重复
+	//首先遍历盘符
+		var pf = drivers[i].substring(drivers[i].indexOf("(")+1,drivers[i].lastIndexOf(")"));
+	//得到具体盘符下面的子文件夹
+		var forlder = getForlderList(pf+"//");
+		var flength = forlder.length;
+		var id = k;
+		r.add(k,1,drivers[i],'','','javascript:show('+id+',"'+pf+'/")');
+	}
+var mainDiv=document.getElementById("main");
+var info = 	mainDiv.innerHTML;
+var cont="";
+//显示文件的格式
+var fileType=new Array("gif","jpg","png","jpeg","bmp");
+var nowpf=[]; //作用是处理重复点击
+var boo = true;
+function wan(e){
+var target = e;
+var check = e.lastChild.lastChild;
+if(check.checked){ //如果是选中
+check.checked=false;
+e.firstChild.innerHTML="";
+}
+else{
+check.checked=true;
+e.firstChild.innerHTML="<img style='' src='images/chose.gif'>";
+}
+}
+
+var scollWZ=0;
+function point(ev){
+var div0 = document.getElementById("tDiv0");
+scollWZ= div0.scrollHeight;//event.clientY;
+}
+
+function show(level,forlder){
+	
+	boo=true;
+    mainDiv.innerHTML=info;
+	cont="";
+	var forlder_ = getForlderList(forlder);
+	//显示文件
+	var files = getFileList(forlder);
+	var content = document.getElementById("content");
+	
+	for(var i=0;i<files.length;i++){
+	var truePath = files[i]+"";
+	var filehz = truePath.substr(truePath.lastIndexOf(".")+1,truePath.length);
+	var fileName = truePath.substr(truePath.lastIndexOf("\\")+1,truePath.length);
+	filehz = filehz.toLowerCase();
+	for(var j=0;j<fileType.length;j++){
+		if(filehz==fileType[j]){
+		
+			cont=cont+ "<div style='width:100px;height:120px;margin:14px;float:left;background:#ffffff'>"+
+							"<div style='border:1px solid #f0f0f0; width:100px;height:100px; ' onclick='wan(this)'>"+
+							"<div style='height:10px;'></div>"+
+								"<div style='padding-top:5px;'><img style='width:100px;height:60px' src='"+truePath+"'>"+
+								"<input type='checkbox' name='checkb' style='display:none' value='"+truePath+"'>"+
+							"</div></div>"+
+							"<div style='text-align:center; width:90px;height:20px;'>"+fileName+"</div>"+
+						"</div>";
+			
+		}
+	}
+	}
+	content.innerHTML = cont;
+	
+	for(var i=0;i<nowpf.length;i++){
+		if(forlder == nowpf[i]){
+			boo = false;
+		}
+	}
+	
+	if(boo){  //如果已经点击过了，就不再从新加入字文件夹
+	nowpf.push(forlder);
+	//文件夹
+	for(var i=0;i<forlder_.length;i++){
+	k=k+1;
+	var id =k;
+	var pf = forlder_[i]+"";
+	var ppf = pf.substr(pf.lastIndexOf("\\")+1,pf.length);
+	var p = pf.split("\\");
+	var pi="";
+	for(var j=0;j<p.length;j++){
+	pi = pi+p[j]+"/";	 
+	}
+	pf = pi;
+	r.add(k,level,ppf,'','','javascript:show('+id+',"'+pf+'")');
+	}
+	}
+	r.startTree();
+//////////////////////////////////////////////
+var div0 = document.getElementById("tDiv0");
+var wz = (div0.scrollHeight/360)*scollWZ;
+div0.scrollTop=scollWZ-400;
+div0.scrollIntoView();
+alert(div0.scrollHeight+":"+scollWZ+":"+wz);
+}
+//////////////////////////////////////////////
+r.add(1,0,"我的电脑",'images/folderclose.gif','images/imgfolder.gif','');
+
+r.startTree();
+</script>
+
+</body>
+</html>

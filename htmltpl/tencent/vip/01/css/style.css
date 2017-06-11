@@ -1,0 +1,138 @@
+body {margin:10px; padding:0; font:12px/1.5 tahoma; color:#555;}
+ul,li,dl,dt,dd,h2,h3,h4,p {margin:0; padding:0;}
+li {list-style-type:none;}
+img {border:none;}
+a {color: #0b588f;text-decoration: none;}
+a:hover {color: #0b588f;text-decoration:underline;}
+
+.header {width:950px; height:276px; margin:0 auto; position:relative;}
+.header .link {position:absolute; width:100px; height:30px; left:75px; bottom:52px;}
+.header .link a {display:block; width:33px; height:30px; float:left;}
+.wrap {width:950px; overflow:hidden; margin:0 auto;}
+
+.corners_b {background:url(http://pc2.gtimg.com/tq/images/corners.png) 0 -5px no-repeat; height:5px; overflow:hidden;}
+.corners_b span {display:block; float:right; width:10px; height:5px; background:url(http://pc2.gtimg.com/tq/images/corners.png) right -5px no-repeat;}
+.corners_t {background:url(http://pc2.gtimg.com/tq/images/corners.png) 0 0 no-repeat; height:5px; overflow:hidden;}
+.corners_t span {display:block; float:right; width:10px; height:5px; background:url(http://pc2.gtimg.com/tq/images/corners.png) right 0 no-repeat;}
+.space {margin-bottom:10px;}
+.main {width:630px; float:left;}
+.act_title {height:31px; background:url(http://pc2.gtimg.com/tq/images/act_bar.png) top center no-repeat;}
+.act_title a {display:inline; cursor:pointer; float:left; height:31px; line-height:31px; overflow:hidden; margin-left:2px; padding:0 15px; text-align:center; font-size:14px; font-weight:bold;}
+.act_title a.set {color:#333; background:url(http://pc2.gtimg.com/tq/images/act_bar.png) bottom repeat-x; border-right:1px solid #c4d4dd;}
+.act_tab {border-left:1px solid #c4d4dd; border-right:1px solid #c4d4dd; background:#fafbfd;}
+.act_close {display:block; float:right; width:21px; height:21px; background:url(http://pc2.gtimg.com/tq/images/act.png) 0 -197px no-repeat;}
+.act_open {background-position:-21px -197px;}
+.act_tab h2 {color:#555; font-size:14px; margin-bottom:5px;}
+.act_tab h2 font {font-weight:normal; color:#5c971b; font-size:12px; padding-left:20px;}
+.act_tab h2 span {display:inline-block; width:16px; height:16px; margin-right:5px; background:url(http://pc1.gtimg.com/pcmgr/user/img/icon.png) no-repeat;}
+.act_tab h2 span.safe_lv1,.icons a.safe_lv1 {background-position:0 -28px;}
+.act_tab h2 span.safe_lv2,.icons a.safe_lv2 {background-position:0 -57px;}
+.act_tab h2 span.safe_lv3,.icons a.safe_lv3 {background-position:0 -86px;}
+.act_tab h2 span.safe_lv4,.icons a.safe_lv4 {background-position:0 -115px;}
+.act_tab h2 span.safe_lv5,.icons a.safe_lv5 {background-position:0 -144px;}
+.act_tab h2 span.safe_lv6,.icons a.safe_lv6 {background-position:0 -173px;}
+#my_act {padding:20px;}
+.act_tab table {border:1px solid #c4d4dd; border-collapse:collapse;}
+.act_tab table td {border-bottom:1px solid #C4D4DD; height:80px; padding:15px 15px 5px 15px;}
+.act_tab table td strong {font-size:14px;}
+.act_tab table td em {color:#5eb8ec; font-size:24px; padding-right:5px; display:inline; font-weight:bolder; font-family:Arial, Helvetica, sans-serif;}
+.act_tab table td span {color:#808080;}
+.act_tab table td b {padding-bottom:5px; display:block;}
+.act_tab td.info {background:url(http://pc1.gtimg.com/td/site/pcmgr/img/act_my_bg.png) top left no-repeat; padding-left:30px;}
+.act_tab td.info span { overflow:hidden; height:3em; display:block;}
+.act_tab td.info a.copy {padding-left:10px;}
+.act_tab td.info a.toggle {float:right; padding-right:15px;}
+.act_tab td.info a.on {background:url(http://pc1.gtimg.com/pc/pinyin/spirit.png) no-repeat -852px -45px;}
+.act_tab td.info a.off {background:url(http://pc1.gtimg.com/pc/pinyin/spirit.png) no-repeat -852px -57px;}
+.act_item .act_info {float:right; width:380px; text-align:left;}
+.act_item .pic {float:left; margin-left:10px;}
+.act_info h3 {font-size:14px; font-weight:bold; color:#0b588f;}
+.act_info p {color:#777;}
+.act_info a {display:block; cursor:pointer; width:84px; height:31px; background:url(http://pc2.gtimg.com/tq/images/act.png) 0 -36px no-repeat;}
+.act_info a.s1 {background-position:0 -67px; cursor:text;}
+.act_info a.s2 {background-position:0 -98px; cursor:text;}
+.act_wrap {overflow:hidden; zoom:1; margin-bottom:20px;}
+.act_row .act_item {width:199px; margin-bottom:10px; float:left; text-align:center; color:#777; padding:0;}
+.act_row .act_info {display:none;}
+.act_row span {display:inline;}
+.act_cell .act_item {width:100%; padding:20px 0; overflow:hidden; zoom:1;}
+.act_cell .act_info {display:block;}
+.act_cell span {display:none;}
+.act_tab .act_row {padding:15px 15px 0 15px; overflow:hidden; zoom:1; border-bottom:1px solid #dcedfa;}
+.albg {background:url(http://pc2.gtimg.com/tq/images/albg.jpg) left top repeat-x;}
+/*login*/
+.side {width:312px; float:right;}
+.login_box {border-left:1px solid #c4d4dd; border-right:1px solid #c4d4dd; margin-top:0px; background:#fafbfd;}
+.nologin,.logined {padding:10px 18px 20px 18px; display:none;}
+.nologin .login_top,.logined .login_top {height:55px; border-bottom:1px dashed #c5d7e4; position:relative;}
+.login_top .login_btn {display:inline-block; width:130px; height:42px; position:absolute; top:0; left:70px; background:url(http://pc2.gtimg.com/tq/images/act.png) 0 -129px no-repeat;}
+.login_text {padding-top:10px; color:#555;}
+.logined .user_info {width:220px; padding-bottom:25px; line-height:1.2em; position:absolute; top:0; right:0;}
+#face {border:1px solid #CCC;}
+#uname {float:left; width:180px; overflow:hidden;}
+a#loginout {float:right;}
+.icons {position:absolute; left:0; bottom:0;}
+.icons a {display:inline; float:left; width:16px; height:16px; margin-right:10px; background:url(http://pc1.gtimg.com/pcmgr/user/img/icon.png) no-repeat;}
+.icons a.icon_on {background-position:-31px 0;}
+.icons a.icon_off {background-position:-57px 0;}
+.icons a.speed_ok {background:url(http://pc1.gtimg.com/td/site/pcmgr/img/user_spite.png) -364px -155px no-repeat;}
+.icons a.speed_no {background:url(http://pc1.gtimg.com/td/site/pcmgr/img/user_spite.png) -364px -70px no-repeat;}
+.icons a.speed_go {background:url(http://pc1.gtimg.com/td/site/pcmgr/img/user_spite.png) -364px -90px no-repeat;}
+.icons a.speed_break {background:url(http://pc1.gtimg.com/td/site/pcmgr/img/user_spite.png) -364px -175px no-repeat;}
+.safe_speed {margin-top:10px; text-align:left;}
+.safe_speed font {font-size:12px; color:#029A47; font-weight:bold;}
+.safe_speed .speed_show {display:inline-block; float:right; width:23px; height:14px; margin-right:120px; background:url(http://pc1.gtimg.com/pcmgr/safecommu/images/status.png) 0 -297px no-repeat;}
+.bar_title {margin:0 auto; padding:0 0 3px 0; height:18px; overflow:hidden;}
+.bar_title .bank_num {width:120px; float:left;}
+.bar_title .bank_num font {color:#029a47; font-weight:bold;}
+.bar_title .bank_last {padding-left:18px; float:right; color:#047acd; background:url(http://pc1.gtimg.com/pcmgr/user/img/icon.png) -33px -86px no-repeat;}
+.bar_wrap {width:268px; height:26px; overflow:hidden; position:relative; margin:0 auto; background:url(http://pc1.gtimg.com/td/site/pcmgr/img/safe_bar.png) 0 5px no-repeat;}
+.bar_wrap .now_lv {display:block; width:21px; height:11px; background:url(http://pc1.gtimg.com/td/site/pcmgr/img/safe_bar.png) 0 -38px no-repeat; position:absolute; top:0; left:3px;}
+.bar_wrap .next_lv {display:block; width:21px; height:11px; background:url(http://pc1.gtimg.com/td/site/pcmgr/img/safe_bar.png) 0 -38px no-repeat; position:absolute; top:0; right:3px;}
+.bar_wrap .lv0 {background-position: -126px -38px;}
+.bar_wrap .lv1 {background-position: 0 -38px;}
+.bar_wrap .lv2 {background-position: -21px -38px;}
+.bar_wrap .lv3 {background-position: -42px -38px;}
+.bar_wrap .lv4 {background-position: -63px -38px;}
+.bar_wrap .lv5 {background-position: -84px -38px;}
+.bar_wrap .lv6 {background-position: -105px -38px;}
+.bar_lv {width:0; height:13px; background:url(http://pc1.gtimg.com/td/site/pcmgr/img/safe_bar.png) 0 -23px no-repeat; position:absolute; left:1px; bottom:0;}
+/*list*/
+.list_box,.role_box {border-left:1px solid #c4d4dd; border-right:1px solid #c4d4dd; padding:10px 15px; background:#fafbfd;}
+.list_box h3 {font-size:12px;}
+.list_box ul li {height:20px; line-height:20px; overflow:hidden; padding-left:10px; background:url(http://pc2.gtimg.com/tq/images/li.png) left center no-repeat;}
+.list_box ul li span {float:right;}
+.list_box font {color:#02a24b; font-size:12px;}
+.role_box h3 {font-size:14px;}
+.role_box ul {display:block; background:url(http://pc2.gtimg.com/tq/images/dot.png) left 10px no-repeat; padding:5px 0 0 20px;}
+.role_box ul li {height:24px; line-height:24px; *line-height:25px; font-size:14px;}
+/*msg*/
+#act_msg {width:410px;}
+.act_msg {width:300px; text-align:left; background:#FFF; display:none; z-index:9999; position:relative;}
+.act_msg h4 {font-size:14px; height:35px; line-height:35px; color:#000; padding-left:10px; border-bottom:1px solid #9EC5E6; background:#cee5f8;}
+.act_msg a.close {position:absolute; top:7px; right:7px; display:block; width:21px; height:21px; background:url(http://pc2.gtimg.com/tq/images/act.png) -42px -197px no-repeat; cursor:pointer;}
+.act_msg_info {position:relative; margin:0 10px; border-bottom:1px dashed #9EC5E6; height:auto !important; height:70px; min-height:70px; overflow:hidden; zoom:1;}
+.act_msg_info s {display:block; width:40px; height:40px; float:left; margin:18px 0 0 10px; background:url(http://pc2.gtimg.com/tq/images/act.png) -90px 0 no-repeat;}
+.act_msg_info s.error {background-position:-90px -40px;}
+.act_msg_info p {float:right; width:320px; padding-right:10px; margin-top:15px; font-size:14px; font-weight:bold; color:#555;}
+.act_msg_ps {margin:15px 70px; color:#555; position:relative;}
+.act_msg_ps dt {font-weight:bold;}
+.act_msg_ps dd font {color:#02a24b; font-size:12px;}
+.act_msg_ps dd a {font-weight:bold;}
+.act_msg_ps dd a.link {display:block; width:87px; height:26px; margin:10px auto; background:url(http://pc2.gtimg.com/tq/images/act.png) 0 -218px no-repeat;}
+.act_msg_ps dd a.ok {display:block; width:75px; height:26px; margin:10px auto; background:url(http://pc2.gtimg.com/tq/images/act.png) 0 -244px no-repeat;}
+.act_msg .captcha {margin:10px 0 10px 20px;}
+.act_msg .captcha input {display:block; ime-mode: disabled; height:1.8em;}
+.act_msg .captcha img {border:1px solid #CCC; margin-right:5px; }
+#copy_cdkey {display:block; width:75px; height:26px; position:absolute; top:13px; right:-40px; background:url(http://pc2.gtimg.com/tq/images/act.png) 0 -171px no-repeat;}
+.info_msg {width:160px; padding:10px; border:3px solid #AFCDE8; position:absolute; background:#FFF; display:none;}
+
+.footer {text-align:center; color:#9E9E9E; padding:30px 0;}
+
+.loginframe {display:none;}
+/*page*/
+.pagination {font-size:12px; overflow:hidden; zoom:1; margin-top:10px;}
+.pagination a {text-decoration: none;border: solid 1px #AAE;color: #15B;}
+.pagination a, .pagination span {display: block;float: left;padding:3px;_padding:3px 5px;margin-right: 5px;margin-bottom: 5px;min-width:1em;text-align:center;}
+.pagination .current {background: #26B;color: #fff;border: solid 1px #AAE;}
+.pagination .current.prev, .pagination .current.next{color:#999;border-color:#999;background:#fff;}
