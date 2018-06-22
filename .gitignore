@@ -4,7 +4,6 @@
 *.iws
 
 # Eclipse
-.project
 .settings/
 
 # Mac
@@ -19,3 +18,4 @@ npm-debug.log
 # !dist/*.html
 
 
+/bin/
