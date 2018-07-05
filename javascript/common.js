@@ -1,7 +1,7 @@
 /**
  * 将长整型时间戳转换成字符串(yyyy-MM-dd HH:mm:ss)
  */
-function formatTimestamp(time) {
+function formatTime(time) {
 	var datetime = new Date();
 	datetime.setTime(time);
 	var year = datetime.getFullYear();
@@ -12,3 +12,12 @@ function formatTimestamp(time) {
 	var second = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
 	return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
 }
+
+/**
+ * 判断是否为空内容
+ */
+function isEmpty(e) {
+	return (null == e || "undefined" == typeof(e) || "" == e);
+}
+
+
